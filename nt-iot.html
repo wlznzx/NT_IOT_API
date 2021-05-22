@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>接口文档(1)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<style type="text/css">
+.highlight  { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+.pl-c {
+    color: #969896;
+}
+
+.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+    color: #0086b3;
+}
+
+.pl-e,.pl-en {
+    color: #795da3;
+}
+
+.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
+    color: #333;
+}
+
+.pl-ent {
+    color: #63a35c;
+}
+
+.pl-k,.pl-s,.pl-st {
+    color: #a71d5d;
+}
+
+.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
+    color: #df5000;
+}
+
+.pl-id {
+    color: #b52a1d;
+}
+
+.pl-ii {
+    background-color: #b52a1d;
+    color: #f8f8f8;
+}
+
+.pl-sr .pl-cce {
+    color: #63a35c;
+    font-weight: bold;
+}
+
+.pl-ml {
+    color: #693a17;
+}
+
+.pl-mh,.pl-mh .pl-en,.pl-ms {
+    color: #1d3e81;
+    font-weight: bold;
+}
+
+.pl-mq {
+    color: #008080;
+}
+
+.pl-mi {
+    color: #333;
+    font-style: italic;
+}
+
+.pl-mb {
+    color: #333;
+    font-weight: bold;
+}
+
+.pl-md,.pl-mdhf {
+    background-color: #ffecec;
+    color: #bd2c00;
+}
+
+.pl-mdht,.pl-mi1 {
+    background-color: #eaffea;
+    color: #55a532;
+}
+
+.pl-mdr {
+    color: #795da3;
+    font-weight: bold;
+}
+
+.pl-mo {
+    color: #1d3e81;
+}
+.task-list {
+padding-left:10px;
+margin-bottom:0;
+}
+
+.task-list li {
+    margin-left: 20px;
+}
+
+.task-list-item {
+list-style-type:none;
+padding-left:10px;
+}
+
+.task-list-item label {
+font-weight:400;
+}
+
+.task-list-item.enabled label {
+cursor:pointer;
+}
+
+.task-list-item+.task-list-item {
+margin-top:3px;
+}
+
+.task-list-item-checkbox {
+display:inline-block;
+margin-left:-20px;
+margin-right:3px;
+vertical-align:1px;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/8.0/styles/solarized_dark.min.css">
+<script src="https://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!-- -->
+<script type="text/javascript">
+    function wrapOldContentByDiv() {
+        var oldContentDiv = document.createElement("div");
+        oldContentDiv.style.cssText = "float:right; width:72%; padding-left: 3%; padding-right:3%;border-left: 1px solid #CACACA;";
+        oldContentDiv.innerHTML = document.body.innerHTML;
+        document.body.style["max-width"] = "100%";
+        document.body.style["margin"] = "20px";
+        document.body.style["padding"] = "0";
+        document.body.innerHTML = '';
+        document.body.appendChild(oldContentDiv);
+    };
+
+    function addDirectorySwitch(directoryDiv) {
+        var directorySwitchP = document.createElement("p");
+        directorySwitchP.style.cssText = "text-align: left; margin: 0;";
+        directoryDiv.appendChild(directorySwitchP);
+
+        var ele_span = document.createElement("span");
+        ele_span.style.cssText = "font-weight: 1000;";
+        var ele_text = document.createTextNode("目录");
+        ele_span.appendChild(ele_text);
+
+        var ele_a = document.createElement("a");
+        ele_a.appendChild(document.createTextNode("[-]"));
+        ele_a.setAttribute("href", "#");
+        ele_a.setAttribute("onclick", "javascript:return switchAllDirectory(this);");
+        ele_a.setAttribute("title", "Click to Open TOC");
+
+        ele_span.appendChild(ele_a);
+        directorySwitchP.appendChild(ele_span);
+    }
+
+    function createTree(parentNode, tags, index, maxLevel) {
+        if (index >= tags.length) {
+            return -1;
+        }
+
+        var lastLevel = -1;
+        for (var i = index; i < tags.length; i++) {
+            var header = tags[i];
+            var level = parseInt(header.tagName.substr(1), 10);
+
+            var childNode = {'tag': header, 'childNodes': [], 'level': level};
+            if (level > parentNode.level) {
+                if (lastLevel > 0 && level > lastLevel) {
+                    // 子子类
+                    index = createTree(parentNode.childNodes[parentNode.childNodes.length - 1], tags, i);
+                    if (index < 0) {
+                        return -1;
+                    } else {
+                        i = index - 1;
+                    }
+                } else {
+                    parentNode.childNodes.push(childNode);
+                    lastLevel = level;
+                }
+            } else if (level <= maxLevel && parentNode.level > maxLevel) {
+                parentNode.childNodes.push(childNode);
+                lastLevel = level;
+            } else {
+                return i;
+            }
+        }
+    }
+
+    function createAElement(tag, index) {
+        var a = document.createElement("a");
+        a.style.cssText = "";
+        a.setAttribute("href", "#" + tag.textContent);
+        a.innerHTML = index.toString() + tag.textContent;
+        return a;
+    }
+
+    function createOlElement() {
+        var ol_el = document.createElement("ol");
+        ol_el.style["line-height"] = "180%";
+        ol_el.style["list-style-type"] = "none";
+        ol_el.style["margin-left"] = "0";
+        return ol_el
+    }
+
+    function createEmptyLiElement() {
+        var emptyLiEle = document.createElement("li");
+        return emptyLiEle
+    }
+
+    function getIndex(parentDirectory, directoryLevel, index) {
+        if (directoryLevel === 0) {
+            return parentDirectory + (index + 1).toString() + "."
+        } else {
+            return parentDirectory + (index + 1).toString() + ".";
+        }
+    }
+
+    function createLeafElement(node, curDirectory) {
+        var liEle = createEmptyLiElement();
+        var aEle = createAElement(node.tag, curDirectory);
+        liEle.appendChild(aEle);
+        return liEle
+    }
+
+    function getArrowDownStyle() {
+        return " width: 0;" +
+            "    height: 0;" +
+            "    position: relative;" +
+            "    margin-right: 8px;" +
+            "    top: 3px;" +
+            "    display: inline-block;" +
+            "    border: 6px outset;" +
+            "    border-color: black transparent transparent transparent;"
+    }
+
+    function getArrowRightStyle() {
+        return " width: 0;" +
+            "    height: 0;" +
+            "    left: 5px;" +
+            "    position: relative;" +
+            "    margin-right: 8px;" +
+            "    display: inline-block;" +
+            "    border: 6px solid;" +
+            "    border-color: transparent transparent transparent black;"
+    }
+    /*
+    <ol>
+        <li><a>根节点1</a></li>
+        <li><a>根节点2</a></li>
+        <li>
+            <div>
+                <a><span>[-]</span>根节点3</a>
+                <ol>
+                    <li><a>子节点1</a></li>
+                    <li><a>子节点2</a></li>
+                    <li><a>子节点3</a></li>
+                </ol>
+            </div>
+        </li>
+        <li><a>根节点4</a></li>
+     </ol>
+    * */
+    // node, 1.2.3 4 0
+    function renderTree(node, parentDirectory, directoryLevel, index) {
+        var childNodes = node.childNodes;
+        var tagContent = node.tag.textContent;
+
+        node.tag.setAttribute("id", tagContent);
+
+        var curDirectory = getIndex(parentDirectory, directoryLevel, index);
+        var directoryName = curDirectory + "&nbsp;" + tagContent;
+
+        // 叶子节点
+        if (childNodes.length === 0) {
+            return "<li style='padding-left: 24px;'><a href='#" + tagContent + "'>" + directoryName + "</a></li>"
+    //                return createLeafElement(node, curDirectory)
+        }
+        // 非叶子节点
+        var childContent = "";
+        for (var j = 0; j < node.childNodes.length; j++) {
+            childContent += renderTree(node.childNodes[j], curDirectory, directoryLevel + 1, j);
+        }
+
+        return "<li>" +
+            "   <div>" +
+            "      <div>" +
+            "         <div id='" + directoryName + "' class='open' style='" + getArrowDownStyle() + "' onclick='return switchDirectory(this);'></div>" +
+            "         <a href='#" + tagContent + "' ondblclick='return switchByDbClick(this);'>" + directoryName + "</a>" +
+            "      </div>" +
+            "      <ol id='ol-" + directoryName + "' style='line-height: 180%;list-style-type: none; padding-left: 20px;'>" + childContent + "</ol>" +
+            "   </div>" +
+            "</li>";
+
+        /*var liEle = createEmptyLiElement();
+        var aEle = createAElement(node.tag, curDirectory);
+
+        var parentElement = document.createElement("div");
+        parentElement.appendChild(aEle);
+
+        var olElement = createOlElement();
+
+        var tempNode;
+        for (var j = 0; j < node.childNodes.length; j++) {
+            tempNode = node.childNodes[j];
+            var element = renderTree(tempNode, curDirectory, directoryLevel + 1, j);
+            olElement.appendChild(element);
+        }
+        parentElement.appendChild(olElement);
+
+        liEle.appendChild(parentElement);
+        return liEle;*/
+    }
+
+    function switchByDbClick(aEle) {
+        switchDirectory(aEle.parentElement().firstChild)
+    }
+
+    // 开关目录
+    function switchDirectory(ele) {
+        var divEle = ele.parentNode.parentNode;
+        var olEle = divEle.lastElementChild;
+        if (ele.className === "open") {
+            // 关闭
+            olEle.style.cssText = "display:none;line-height: 180%;list-style-type: none; padding-left: 20px";
+            ele.setAttribute("class", "close");
+            ele.style.cssText = getArrowRightStyle();
+        } else if (ele.className === "close") {
+            // 打开
+            olEle.style.cssText = "line-height: 180%;list-style-type: none; padding-left: 20px";
+            ele.setAttribute("class", "open");
+            ele.style.cssText = getArrowDownStyle();
+        }
+    }
+
+    function switchAllDirectory(e) {
+        var rootOlElement = document.getElementById("outline_ol");
+        var ols = rootOlElement.getElementsByTagName("ol");
+        var isOpen = false;
+
+        if (e.innerHTML === '[+]') {
+            e.setAttribute('title', 'collapse');
+            e.innerHTML = '[-]';
+            isOpen = true;
+        } else {
+            e.setAttribute('title', 'expand');
+            e.innerHTML = '[+]';
+        }
+
+
+        for (var i = 0; i < ols.length; i++) {
+            var olEle = ols[i];
+            if (isOpen) {
+                olEle.style.display = "block";
+                olEle.parentNode.firstElementChild.firstElementChild.style.cssText = getArrowDownStyle();
+            } else {
+                olEle.style.display = "none";
+                olEle.parentNode.firstElementChild.firstElementChild.style.cssText = getArrowRightStyle();
+            }
+        }
+
+        e.blur();
+        return false;
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        // 1, 将body内容提取到div标签中
+        wrapOldContentByDiv();
+
+        // 2, 创建左边目录列表Div
+        var directoryDiv = document.createElement("div");
+        directoryDiv.setAttribute("id", "outline-list");
+        directoryDiv.style.cssText = "width:20%;height:100%; float:left;font-size:16px,z-index:1;position: fixed;overflow: hidden;";
+
+        // 3, 目录展开折叠开关
+        addDirectorySwitch(directoryDiv);
+
+        // 4, 创建目录列表
+        var directoryOl = document.createElement("ol");
+        directoryOl.style.cssText = "padding-left:14px;line-height:180%;list-style-type:none;height: 85%;padding-bottom: 30px; overflow: auto;";
+        directoryOl.setAttribute("id", "outline_ol");
+        directoryDiv.appendChild(directoryOl);
+        var div1 = document.createElement("div");
+        div1.style.cssText = "clear:both";
+
+        // 插入目录
+        document.body.insertBefore(directoryDiv, document.body.childNodes[0]);
+
+        // 5, 获取所有的H标签
+        var hTags = document.querySelectorAll('h1,h2,h3,h4,h5,h6');
+        if (hTags.length < 2)
+            return;
+
+        var rootNode = {'tag': directoryOl, 'childNodes': [], 'level': 0};
+        var maxLevel = parseInt(hTags[0].tagName.substr(1), 10);
+        // 6, 创建树形结构
+        createTree(rootNode, hTags, 0, maxLevel);
+
+        // 7, 绘制树结构
+        var htmlContent = "";
+        for (var j = 0; j < rootNode.childNodes.length; j++) {
+    //                var element = renderTree(rootNode.childNodes[j], '', 1, j);
+    //                directoryOl.appendChild(element);
+
+            htmlContent += renderTree(rootNode.childNodes[j], '', 1, j);
+        }
+        directoryOl.innerHTML = htmlContent;
+    });
+</script>
+
+</head>
+<body>
+<h1 id="app-">APP接口</h1>
+<pre><code>a.涉及到的所有接口均为get请求，出入参均为json格式
+b.{baseurl} 指接口的部署地址 
+  正式环境：    
+c.code=0时接口调用成功。code!=0时,msg为错误描述信息
+</code></pre><h2 id="1-">1 量具管理-列表接口</h2>
+<h3 id="1-1-">1.1 接口描述</h3>
+<pre><code>量具列表接口
+</code></pre><h3 id="1-2-">1.2 接口地址</h3>
+<pre><code>{baseurl}/api/equipment/data
+</code></pre><h3 id="1-3-">1.3 接口入参</h3>
+<pre><code>{
+    &quot;action&quot;:&quot;list&quot;,//动作
+    &quot;uid&quot;:&quot;&quot;,//授权id
+    &quot;pageNum&quot;:1,//页码
+    &quot;pageSize&quot;:15,//页面大小
+}
+</code></pre><h3 id="1-4-">1.4 接口出参</h3>
+<pre><code>    {
+        &quot;total&quot;: 17,//数据总条数
+        &quot;rows&quot;: [{
+            &quot;searchValue&quot;: null,
+            &quot;createBy&quot;: &quot;&quot;,
+            &quot;createTime&quot;: null,
+            &quot;updateBy&quot;: &quot;&quot;,
+            &quot;updateTime&quot;: &quot;2021-04-05 22:46:43&quot;,
+            &quot;remark&quot;: null,
+            &quot;params&quot;: {
+                &quot;deptName&quot;: &quot;test&quot;,
+                &quot;productionLineName&quot;: &quot;活塞线&quot;
+            },
+            &quot;id&quot;: 15,//唯一id
+            &quot;factoryCode&quot;: &quot;108&quot;,
+            &quot;machineCode&quot;: &quot;SXFA1038&quot;,//量具code
+            &quot;machineName&quot;: &quot;活塞线粗加工&quot;,//量具名称
+            &quot;productionLineCode&quot;: &quot;14&quot;,//产线id
+            &quot;deptId&quot;: &quot;120&quot;,//部门id
+            &quot;workOperation&quot;: &quot;&quot;,//工序
+            &quot;type&quot;: &quot;&quot;,//类型
+            &quot;manufacturer&quot;: &quot;无锡恩梯量仪&quot;,//制造商
+            &quot;manufactureDate&quot;: &quot;2017-07-04&quot;,//生产日期
+            &quot;operator&quot;: null,//操作人
+            &quot;operateTime&quot;: null,//操作日期
+            &quot;installDate&quot;: &quot;2021-03-27&quot;,//安装时间
+            &quot;bootDate&quot;: &quot;2021-03-27&quot;,//开机时间
+            &quot;productionQuantity&quot;: 0,//数量
+            &quot;phone&quot;: &quot;&quot;,//电话
+            &quot;contacts&quot;: &quot;&quot;,//联系人
+            &quot;rmk&quot;: &quot;测试描述&quot;,//描述
+        }],
+        &quot;code&quot;: 0,
+        &quot;msg&quot;: null,
+        &quot;params&quot;: {}
+    }
+</code></pre><h2 id="2-">2 量具管理-新增接口</h2>
+<h3 id="2-1-">2.1 接口描述</h3>
+<pre><code>新增量具
+</code></pre><h3 id="2-2-">2.2 接口地址</h3>
+<pre><code>{baseurl}/api/equipment/data
+</code></pre><h3 id="2-3-">2.3 接口入参</h3>
+<pre><code>{
+    &quot;action&quot;:&quot;add&quot;,//动作
+    &quot;uid&quot;:&quot;&quot;,//授权id
+    &quot;searchValue&quot;: null,
+    &quot;machineCode&quot;: &quot;SXFA1038&quot;,//量具code 
+    &quot;machineName&quot;: &quot;活塞线粗加工&quot;,//量具名称
+    &quot;productionLineCode&quot;: &quot;14&quot;,//产线id
+    &quot;deptId&quot;: &quot;120&quot;,//部门id
+    &quot;workOperation&quot;: &quot;&quot;,//工序
+    &quot;type&quot;: &quot;&quot;,//类型
+    &quot;manufacturer&quot;: &quot;无锡恩梯量仪&quot;,//制造商
+    &quot;manufactureDate&quot;: &quot;2017-07-04&quot;,//生产日期
+    &quot;operator&quot;: null,//操作人
+    &quot;operateTime&quot;: null,//操作日期
+    &quot;installDate&quot;: &quot;2021-03-27&quot;,//安装时间
+    &quot;bootDate&quot;: &quot;2021-03-27&quot;,//开机时间
+    &quot;productionQuantity&quot;: 0,//数量
+    &quot;phone&quot;: &quot;&quot;,//电话
+    &quot;contacts&quot;: &quot;&quot;,//联系人
+    &quot;rmk&quot;: &quot;测试描述&quot;,//描述
+}
+</code></pre><h3 id="2-4-">2.4 接口出参</h3>
+<pre><code>{
+  &quot;msg&quot;: &quot;&quot;,
+  &quot;code&quot;: 0,
+  &quot;data&quot;: {
+      id:12//新增的量具id
+  }
+}
+</code></pre><h2 id="3-">3  量具管理-更新接口</h2>
+<h3 id="3-1-">3.1 接口描述</h3>
+<pre><code>更新量具数据 （不更新的字段不传或为null，更新为空传入空字符串）
+</code></pre><h3 id="3-2-">3.2 接口地址</h3>
+<pre><code>{baseurl}/api/equipment/data
+</code></pre><h3 id="3-3-">3.3 接口入参</h3>
+<pre><code>{
+    &quot;action&quot;:&quot;update&quot;,//动作
+    &quot;uid&quot;:&quot;&quot;,//授权id
+    &quot;id&quot;:11,//量具id
+    &quot;searchValue&quot;: null,
+    &quot;machineCode&quot;: &quot;SXFA1038&quot;,//量具code 
+    &quot;machineName&quot;: &quot;活塞线粗加工&quot;,//量具名称
+    &quot;productionLineCode&quot;: &quot;14&quot;,//产线id
+    &quot;deptId&quot;: &quot;120&quot;,//部门id
+    &quot;workOperation&quot;: &quot;&quot;,//工序
+    &quot;type&quot;: &quot;&quot;,//类型
+    &quot;manufacturer&quot;: &quot;无锡恩梯量仪&quot;,//制造商
+    &quot;manufactureDate&quot;: &quot;2017-07-04&quot;,//生产日期
+    &quot;operator&quot;: null,//操作人
+    &quot;operateTime&quot;: null,//操作日期
+    &quot;installDate&quot;: &quot;2021-03-27&quot;,//安装时间
+    &quot;bootDate&quot;: &quot;2021-03-27&quot;,//开机时间
+    &quot;productionQuantity&quot;: 0,//数量
+    &quot;phone&quot;: &quot;&quot;,//电话
+    &quot;contacts&quot;: &quot;&quot;,//联系人
+    &quot;rmk&quot;: &quot;测试描述&quot;,//描述
+}
+</code></pre><h3 id="3-4-">3.4 接口出参</h3>
+<pre><code>{
+  &quot;msg&quot;: &quot;成功&quot;,
+  &quot;code&quot;: 0,
+  &quot;data&quot;: {
+
+  }
+}
+</code></pre><h2 id="4-">4 量具管理-删除接口</h2>
+<h3 id="4-1-">4.1 接口描述</h3>
+<pre><code>删除量具数据  
+</code></pre><h3 id="4-2-">4.2 接口地址</h3>
+<pre><code>{baseurl}/api/equipment/data
+</code></pre><h3 id="4-3-">4.3 接口入参</h3>
+<pre><code>    {
+    &quot;action&quot;:&quot;update&quot;,//动作
+    &quot;uid&quot;:&quot;&quot;,//授权id
+    &quot;id&quot;:11,//量具id
+}
+</code></pre><h3 id="4-3-">4.3 接口出参</h3>
+<pre><code>{
+  &quot;msg&quot;: &quot;&quot;,
+  &quot;code&quot;: 0,
+  &quot;data&quot;: {  
+  }
+}
+</code></pre><h2 id="5-">5 参数管理-列表接口</h2>
+<h3 id="5-1-">5.1 接口描述</h3>
+<pre><code>参数列表接口
+</code></pre><h3 id="5-2-">5.2 接口地址</h3>
+<pre><code>{baseurl}/api/paramConfig/data
+</code></pre><h3 id="5-3-">5.3 接口入参</h3>
+<pre><code>{
+    &quot;action&quot;:&quot;list&quot;,//动作
+    &quot;uid&quot;:&quot;&quot;,//授权id
+    &quot;pageNum&quot;:1,//页码
+    &quot;pageSize&quot;:1,//页面大小
+}
+</code></pre><h3 id="5-4-">5.4 接口出参</h3>
+<pre><code>{
+    {
+    &quot;total&quot;: 7987,//数据总条数
+    &quot;rows&quot;: [{
+        &quot;searchValue&quot;: null,
+        &quot;params&quot;: {},
+        &quot;id&quot;: 512,//参数id
+        &quot;machineCode&quot;: &quot;SXFA1009&quot;,//量具编码
+        &quot;progId&quot;: 63,//机种
+        &quot;progName&quot;: &quot;气缸孔-TRA100E&quot;,//机种名称
+        &quot;paramKey&quot;: &quot;M1&quot;,//M值
+        &quot;paramName&quot;: &quot;气缸孔-直径上&quot;,//M值名称
+        &quot;type&quot;: &quot;0&quot;,//参数类型  0-数值 1-布尔值
+        &quot;nominalValue&quot;: 25.365,//名义值
+        &quot;lowerTolerance&quot;: -0.01,//下公差
+        &quot;upperTolerance&quot;: 0.01,//上公差
+        &quot;warningUp&quot;: 0.008,//上参数
+        &quot;warningLow&quot;: -0.008,//下参数
+        &quot;isdelete&quot;: 0,//是否删除  1已删除
+        &quot;factoryCode&quot;: &quot;108&quot;,
+        &quot;equipmentId&quot;: 3//量具id
+    }],
+    &quot;code&quot;: 0,
+    &quot;msg&quot;: null,
+    &quot;params&quot;: {}
+}
+</code></pre><h2 id="6-">6 参数管理-新增接口</h2>
+<h3 id="6-1-">6.1 接口描述</h3>
+<pre><code>新增参数
+</code></pre><h3 id="6-2-">6.2 接口地址</h3>
+<pre><code>{baseurl}/api/paramConfig/data  (量具编码或者量具id不能同时为空)
+</code></pre><h3 id="6-3-">6.3 接口入参</h3>
+<pre><code>{
+    &quot;action&quot;:&quot;add&quot;,//动作
+    &quot;uid&quot;:&quot;&quot;,//授权id
+    &quot;machineCode&quot;: &quot;SXFA1009&quot;,//量具编码
+    &quot;progId&quot;: 63,//机种
+    &quot;progName&quot;: &quot;气缸孔-TRA100E&quot;,//机种名称
+    &quot;paramKey&quot;: &quot;M1&quot;,//M值
+    &quot;paramName&quot;: &quot;气缸孔-直径上&quot;,//M值名称
+    &quot;type&quot;: &quot;0&quot;,//参数类型  0-数值 1-布尔值
+    &quot;nominalValue&quot;: 25.365,//名义值
+    &quot;lowerTolerance&quot;: -0.01,//下公差
+    &quot;upperTolerance&quot;: 0.01,//上公差
+    &quot;warningUp&quot;: 0.008,//上参数
+    &quot;warningLow&quot;: -0.008,//下参数
+    &quot;isdelete&quot;: 0,//是否删除  1已删除
+    &quot;equipmentId&quot;: 3//量具id
+}
+</code></pre><h3 id="6-4-">6.4 接口出参</h3>
+<pre><code>{
+  &quot;msg&quot;: &quot;&quot;,
+  &quot;code&quot;: 0,
+  &quot;data&quot;: {
+      id:12//新增的参数id
+  }
+}
+</code></pre><h2 id="7-">7  参数管理-更新接口</h2>
+<h3 id="7-1-">7.1 接口描述</h3>
+<pre><code>更新参数数据 （不更新的字段不传或为null，更新为空传入空字符串）
+</code></pre><h3 id="7-2-">7.2 接口地址</h3>
+<pre><code>{baseurl}/api/paramConfig/data
+</code></pre><h3 id="7-3-">7.3 接口入参</h3>
+<pre><code>{
+    &quot;action&quot;:&quot;update&quot;,//动作
+    &quot;uid&quot;:&quot;&quot;,//授权id
+    &quot;id&quot;:,//参数id  
+    &quot;machineCode&quot;: &quot;SXFA1009&quot;,//量具编码
+    &quot;progId&quot;: 63,//机种
+    &quot;progName&quot;: &quot;气缸孔-TRA100E&quot;,//机种名称
+    &quot;paramKey&quot;: &quot;M1&quot;,//M值
+    &quot;paramName&quot;: &quot;气缸孔-直径上&quot;,//M值名称
+    &quot;type&quot;: &quot;0&quot;,//参数类型  0-数值 1-布尔值
+    &quot;nominalValue&quot;: 25.365,//名义值
+    &quot;lowerTolerance&quot;: -0.01,//下公差
+    &quot;upperTolerance&quot;: 0.01,//上公差
+    &quot;warningUp&quot;: 0.008,//上参数
+    &quot;warningLow&quot;: -0.008,//下参数
+    &quot;isdelete&quot;: 0,//是否删除  1已删除
+    &quot;equipmentId&quot;: 3//量具id
+}
+</code></pre><h3 id="7-4-">7.4 接口出参</h3>
+<pre><code>{
+  &quot;msg&quot;: &quot;成功&quot;,
+  &quot;code&quot;: 0,
+  &quot;data&quot;: {
+
+  }
+}
+</code></pre><h2 id="8-">8 参数管理-删除接口</h2>
+<h3 id="8-1-">8.1 接口描述</h3>
+<pre><code>删除参数数据  
+</code></pre><h3 id="8-2-">8.2 接口地址</h3>
+<pre><code>{baseurl}/api/paramConfig/data
+</code></pre><h3 id="8-3-">8.3 接口入参</h3>
+<pre><code>    {
+    &quot;action&quot;:&quot;update&quot;,//动作
+    &quot;uid&quot;:&quot;&quot;,//授权id
+    &quot;id&quot;:11,//参数id
+}
+</code></pre><h3 id="8-3-">8.3 接口出参</h3>
+<pre><code>{
+  &quot;msg&quot;: &quot;&quot;,
+  &quot;code&quot;: 0,
+  &quot;data&quot;: {  
+  }
+}
+</code></pre><h2 id="9-">9 结果管理-列表接口</h2>
+<h3 id="9-1-">9.1 接口描述</h3>
+<pre><code>结果列表接口
+</code></pre><h3 id="9-2-">9.2 接口地址</h3>
+<pre><code>{baseurl}/api/result/data
+</code></pre><h3 id="9-3-">9.3 接口入参</h3>
+<pre><code>{
+    &quot;action&quot;:&quot;list&quot;,//动作
+    &quot;uid&quot;:&quot;&quot;,//授权id
+    &quot;pageNum&quot;:1,//页码
+    &quot;pageSize&quot;:15,//页面大小
+}
+</code></pre><h3 id="9-4-">9.4 接口出参</h3>
+<pre><code>    {
+        &quot;total&quot;: 166955,//数据总条数
+        &quot;rows&quot;: [{
+            &quot;remark&quot;: null,
+            &quot;id&quot;: 300,
+            &quot;machineCode&quot;: &quot;SXFA1010&quot;,//量具编码
+            &quot;progId&quot;: &quot;48&quot;,//机种
+            &quot;serialNumber&quot;: &quot;&quot;,//序列号
+            &quot;result&quot;: &quot;OK&quot;,//结果
+            &quot;ngReason&quot;: &quot;&quot;,//ng原因
+            &quot;workOperation&quot;: &quot;全部&quot;,//
+            &quot;workOption&quot;: &quot;首件&quot;,//工作时间
+            &quot;templateResultId&quot;: null,//
+            &quot;templateShowId&quot;: null,//导出模板id
+            &quot;factoryCode&quot;: &quot;108&quot;,
+            &quot;equipmentId&quot;: 2,//量具id
+            &quot;operator&quot;: &quot;OPERATER 1&quot;,//操作员
+            &quot;operateTime&quot;: &quot;2019-11-19 09:33:49&quot;,//时间
+            &quot;resultDetailList&quot;: [{
+                &quot;id&quot;: 2121,
+                &quot;resultId&quot;: 300,//resultid
+                &quot;name&quot;: &quot;1&quot;,//m值
+                &quot;mValue&quot;: 25.4027,
+                &quot;rValue&quot;: 34,
+                &quot;gValue&quot;: &quot;&quot;,
+                &quot;eValue&quot;: &quot;&quot;,
+                &quot;jValue&quot;: &quot;&quot;,
+                &quot;isbool&quot;: 0,//是否布尔值 0否  1是
+                &quot;imgurl&quot;: &quot;&quot; //图片路径
+            }]
+        }],
+        &quot;code&quot;: 0,
+        &quot;msg&quot;: null,
+        &quot;params&quot;: {}
+    }
+</code></pre><h2 id="10-">10 结果管理-新增接口</h2>
+<h3 id="10-1-">10.1 接口描述</h3>
+<pre><code>新增结果
+</code></pre><h3 id="10-2-">10.2 接口地址</h3>
+<pre><code>{baseurl}/api/result/data
+</code></pre><h3 id="10-3-">10.3 接口入参</h3>
+<pre><code>{
+    &quot;action&quot;:&quot;add&quot;,//动作
+    &quot;uid&quot;:&quot;&quot;,//授权id
+    &quot;id&quot;: 300,
+    &quot;machineCode&quot;: &quot;SXFA1010&quot;,//
+    &quot;progId&quot;: &quot;48&quot;,//机种
+    &quot;serialNumber&quot;: &quot;&quot;,//序列号
+    &quot;result&quot;: &quot;OK&quot;,//结果
+    &quot;ngReason&quot;: &quot;&quot;,//ng原因
+    &quot;workOperation&quot;: &quot;全部&quot;,//
+    &quot;workOption&quot;: &quot;首件&quot;,//工作时间
+    &quot;templateResultId&quot;: null,//
+    &quot;templateShowId&quot;: null,//导出模板id
+    &quot;factoryCode&quot;: &quot;108&quot;,
+    &quot;equipmentId&quot;: 2,//量具id
+    &quot;operator&quot;: &quot;OPERATER 1&quot;,//操作员
+    &quot;operateTime&quot;: &quot;2019-11-19 09:33:49&quot;,//时间
+    &quot;detailListStr&quot;:&quot;[{\&quot;name\&quot;:\&quot;1\&quot;,\&quot;mValue\&quot;:25.4027,\&quot;rValue\&quot;:34,\&quot;gValue\&quot;:\&quot;\&quot;,\&quot;eValue\&quot;:\&quot;\&quot;,\&quot;jValue\&quot;:\&quot;\&quot;,\&quot;isbool\&quot;:0,\&quot;imgurl\&quot;:\&quot;\&quot;}]&quot; //详细数据
+}
+</code></pre><h3 id="10-4-">10.4 接口出参</h3>
+<pre><code>{
+  &quot;msg&quot;: &quot;&quot;,
+  &quot;code&quot;: 0,
+  &quot;data&quot;: {
+      id:12//新增的结果id
+  }
+}
+</code></pre><h2 id="11-">11  结果管理-更新接口</h2>
+<h3 id="11-1-">11.1 接口描述</h3>
+<pre><code>更新结果数据 （不更新的字段不传或为null，更新为空传入空字符串）
+</code></pre><h3 id="11-2-">11.2 接口地址</h3>
+<pre><code>{baseurl}/api/result/data
+</code></pre><h3 id="11-3-">11.3 接口入参</h3>
+<pre><code>{
+    &quot;action&quot;:&quot;update&quot;,//动作
+    &quot;uid&quot;:&quot;&quot;,//授权id
+    &quot;id&quot;: 300,
+    &quot;machineCode&quot;: &quot;SXFA1010&quot;,//
+    &quot;progId&quot;: &quot;48&quot;,//机种
+    &quot;serialNumber&quot;: &quot;&quot;,//序列号
+    &quot;result&quot;: &quot;OK&quot;,//结果
+    &quot;ngReason&quot;: &quot;&quot;,//ng原因
+    &quot;workOperation&quot;: &quot;全部&quot;,//
+    &quot;workOption&quot;: &quot;首件&quot;,//工作时间
+    &quot;templateResultId&quot;: null,//
+    &quot;templateShowId&quot;: null,//导出模板id
+    &quot;factoryCode&quot;: &quot;108&quot;,
+    &quot;equipmentId&quot;: 2,//量具id
+    &quot;operator&quot;: &quot;OPERATER 1&quot;,//操作员
+    &quot;operateTime&quot;: &quot;2019-11-19 09:33:49&quot;,//时间
+}
+</code></pre><h3 id="11-4-">11.4 接口出参</h3>
+<pre><code>{
+  &quot;msg&quot;: &quot;成功&quot;,
+  &quot;code&quot;: 0,
+  &quot;data&quot;: {
+
+  }
+}
+</code></pre><h2 id="12-">12 结果管理-删除接口</h2>
+<h3 id="12-1-">12.1 接口描述</h3>
+<pre><code>删除结果数据  
+</code></pre><h3 id="12-2-">12.2 接口地址</h3>
+<pre><code>{baseurl}/api/result/data
+</code></pre><h3 id="12-3-">12.3 接口入参</h3>
+<pre><code>    {
+    &quot;action&quot;:&quot;update&quot;,//动作
+    &quot;uid&quot;:&quot;&quot;,//授权id
+    &quot;id&quot;:11,//结果id
+}
+</code></pre><h3 id="12-3-">12.3 接口出参</h3>
+<pre><code>{
+  &quot;msg&quot;: &quot;&quot;,
+  &quot;code&quot;: 0,
+  &quot;data&quot;: {  
+  }
+}
+</code></pre><h2 id="13-">13 激活接口</h2>
+<h3 id="13-1-">13.1 接口描述</h3>
+<pre><code>设备激活接口  
+</code></pre><h3 id="13-2-">13.2 接口地址</h3>
+<pre><code>{baseurl}/api/equipment/auth
+</code></pre><h3 id="13-3-">13.3 接口入参</h3>
+<pre><code>    {
+    &quot;action&quot;:&quot;activation&quot;,// 
+    &quot;uid&quot;:&quot;&quot;,//激活码id
+    &quot;machineCode&quot;:&quot;&quot;,//设备编码
+}
+</code></pre><h3 id="13-3-">13.3 接口出参</h3>
+<pre><code>{
+&quot;msg&quot;:&quot;激活成功&quot;,
+&quot;code&quot;:0
+}
+</code></pre><h2 id="14-">14 设备激活查询接口</h2>
+<h3 id="14-1-">14.1 接口描述</h3>
+<pre><code>设备激活查询接口  
+</code></pre><h3 id="14-2-">14.2 接口地址</h3>
+<pre><code>{baseurl}/api/equipment/auth
+</code></pre><h3 id="14-3-">14.3 接口入参</h3>
+<pre><code>    {
+    &quot;action&quot;:&quot;queryAction&quot;,// 
+    &quot;uid&quot;:&quot;&quot;,//激活码id
+    &quot;machineCode&quot;:&quot;&quot;,//设备编码
+}
+</code></pre><h3 id="14-3-">14.3 接口出参</h3>
+<pre><code>{
+&quot;msg&quot;:&quot;设备已激活&quot;,
+&quot;code&quot;:0
+}
+</code></pre>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
